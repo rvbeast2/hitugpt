@@ -286,6 +286,20 @@
       letter-spacing: 0.2px;
     }
 
+    .new-chat-btn {
+      position: fixed; top: 14px; right: 16px; z-index: 10;
+      display: flex; align-items: center; gap: 6px;
+      padding: 7px 14px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      color: var(--text-muted); font-size: 12.5px; font-weight: 500;
+      cursor: pointer; transition: all 0.15s;
+      font-family: inherit;
+    }
+    .new-chat-btn:hover { background: var(--surface3); color: var(--text); border-color: var(--accent); }
+    .new-chat-btn svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; }
+
     /* ── desktop ── */
     @media (min-width: 768px) {
       body { display: flex; align-items: stretch; justify-content: center; }
@@ -297,6 +311,11 @@
 <div class="app">
 
   <span id="status-text" style="display:none"></span>
+
+  <button class="new-chat-btn" onclick="location.reload()">
+    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+    New chat
+  </button>
 
   <!-- MESSAGES -->
   <div class="messages" id="messages">
@@ -488,7 +507,7 @@ function showEmptyState() {
   es.innerHTML = `
     <div class="empty-glow">H</div>
     <div class="empty-title">HituGPT</div>
-    <div class="empty-sub">Kya chal raha hai Ronak? 👀</div>
+    <div class="empty-sub">Kya chal raha hai Ronak? Bol naa 👀</div>
     <div class="empty-suggestions">
       <span class="suggestion">kya kar rahi ho?</span>
       <span class="suggestion">aaj kaisa tha office?</span>
