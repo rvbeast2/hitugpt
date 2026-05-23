@@ -383,7 +383,6 @@ async function loadHistory() {
 }
 
 // ── SEND ─────────────────────────────────────────────────
-document.getElementById('new-chat-btn').addEventListener('click', clearScreen);
 document.getElementById('send-btn').addEventListener('click', send);
 document.getElementById('msg-input').addEventListener('keydown', e => {
   if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); }
@@ -549,6 +548,14 @@ function isSameDay(a, b) {
          a.getFullYear() === b.getFullYear();
 }
 
+function clearScreen() {
+  const feed = document.getElementById('messages');
+  feed.innerHTML = '';
+  busy = false;
+  showEmptyState();
+}
+
+document.getElementById('new-chat-btn').addEventListener('click', clearScreen);
 loadHistory();
 </script>
 </body>
