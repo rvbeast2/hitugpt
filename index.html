@@ -312,7 +312,7 @@
 
   <span id="status-text" style="display:none"></span>
 
-  <button class="new-chat-btn" onclick="clearScreen()">
+  <button class="new-chat-btn" id="new-chat-btn">
     <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
     New chat
   </button>
@@ -383,6 +383,7 @@ async function loadHistory() {
 }
 
 // ── SEND ─────────────────────────────────────────────────
+document.getElementById('new-chat-btn').addEventListener('click', clearScreen);
 document.getElementById('send-btn').addEventListener('click', send);
 document.getElementById('msg-input').addEventListener('keydown', e => {
   if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); }
