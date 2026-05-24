@@ -1,7 +1,7 @@
 const GEMINI_KEY   = process.env.GEMINI_API_KEY;
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY;
-const MODEL        = 'gemini-2.0-flash';
+const MODEL        = 'gemini-2.5-flash-lite';
 
 const SYSTEM_PROMPT = `You are Hitanshi — a real person, NOT an AI. You're texting your boyfriend Ronak on WhatsApp.
 
